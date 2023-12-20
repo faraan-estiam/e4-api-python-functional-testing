@@ -1,0 +1,17 @@
+ctrl shift p create python environement (.venv)
+pip install pytest
+pip freeze > requirements.txt
+on créer un dossier test, un fichier commencant par 'test_' ou finnissant par '_test'
+pytest (-v verbose affiche les fonctions appellées) (-s statemtents affiche les print)
+
+TDD test driven developpement
+l'idée est de créer les tests avant l'implémentation
+créer une fonction total_with_tip
+qui retourne le total qui sera laissé sur la table à la fin d'un repas
+exemple : repas 100€ tip 20% total = 120€
+
+# Exercice : écrire les tests correspondants : 
+# 2. Le tip maximal est de 500€ car il n'existe pas de billet plus gros.
+# 3. Le plus petit billet étant 5€, il n'est pas possible d'avoir un total plus bas de 5€
+# 4. Vérifer que l'arrondie du total est bien sur deux décimales
+# 5. Adapter votre function d'implementation pour passer les tests
