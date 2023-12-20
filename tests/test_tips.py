@@ -1,4 +1,4 @@
-from implementations.tips import total_with_tips, NegativeValueError
+from classes.tips import total_with_tips, NegativeValueError
 import pytest
 
 
