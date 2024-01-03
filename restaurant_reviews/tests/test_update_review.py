@@ -1,11 +1,17 @@
 from classes.RestaurantReviews import RestaurantReviews, ReviewDoesNotExists
 import pytest
 
-def test_update_valid_review () :
-    rr = RestaurantReviews()
-    rr.reviews["Cafe Mocha"] = {'comment':"Great coffee and pastries", 'rating':5}
-    rr.update_review("Cafe Mocha", "Worst coffe ever!", 0)
-    assert rr.reviews["Cafe Mocha"] == {"comment": "Worst coffe ever!", "rating": 0}
+#valid
+@pytest.mark.parametrize("restaurant, comment, rating, expected_output",[
+    ("Default Diner", 'Meh burgers', 3, ({'comment': 'Meh burgers', 'rating': 3})),
+    ("Permanent Pizza", 'Great pizzas for developers', 4, ({'comment': 'Great pizzas for developers', 'rating': 4})),
+    ("Static Sushi", "It's supposed to be raw", 4, ({"comment": "It's supposed to be raw", "rating": 4}))
+])
+
+def test_update_valid_review (restaurant, comment, rating, expected_output, default_restaurant_reviews) :
+    rr = default_restaurant_reviews
+    rr.update_review(restaurant, comment, rating)
+    assert rr.reviews[restaurant] == expected_output
 
 def test_update_invalid_review () :
     with pytest.raises(ReviewDoesNotExists) as e : #review does not exists
