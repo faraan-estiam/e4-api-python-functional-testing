@@ -1,4 +1,4 @@
-from classes.tips import total_with_tips, NegativeValueError
+from restaurant_reviews.classes.tips import total_with_tips, NegativeValueError
 import pytest
 
 

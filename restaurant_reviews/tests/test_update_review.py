@@ -1,4 +1,4 @@
-from classes.RestaurantReviews import RestaurantReviews, ReviewDoesNotExists
+from restaurant_reviews.classes.RestaurantReviews import RestaurantReviews, ReviewDoesNotExists
 import pytest
 
 #valid

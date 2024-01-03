@@ -1,4 +1,4 @@
-from classes.tips import total_with_tips
+from restaurant_reviews.classes.tips import total_with_tips
 import pytest
 @pytest.mark.parametrize(["num1", "num2", "expectation"], [
     (10,20,12),

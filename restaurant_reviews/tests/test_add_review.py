@@ -1,4 +1,4 @@
-from classes.RestaurantReviews import RestaurantReviews, ReviewAlreadyExists
+from restaurant_reviews.classes.RestaurantReviews import RestaurantReviews, ReviewAlreadyExists
 import pytest
 
 def test_add_valid_review () :
